@@ -1,5 +1,5 @@
 FILE FORMAT
-e:/projects/Medical-Chatbot/
+Medical-Chatbot/
 │
 ├── manage.py
 │
