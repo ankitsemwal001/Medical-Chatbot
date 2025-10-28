@@ -1,0 +1,17 @@
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;        /* Full page height */
+    background-color: #d19292;
+}
+
+h1, h2 {
+    border: 1px solid black;   /* Added border width + color */
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: rgb(158, 152, 152);
+    text-align: center;
+}
