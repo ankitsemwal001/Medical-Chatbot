@@ -1,29 +1,17 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Food Ninja Blog</title>
-  <link rel="stylesheet" href=".../static/css/home.css">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1 class="logo">Food Ninja</h1>
-      <nav>
-        <ul>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
+  {% include 'Html/header.html' %}
   <section class="intro">
-    <h2>The Food Ninja Blog</h2>
-    <p>A blog about food, experiences, and recipes.</p>
+    <h2>Healthcare tips and Exercise</h2>
+    <p>A blog about food, exercise, and healthcare.</p>
     <div class="search-box">
       <input type="text" placeholder="Search for articles">
       <button>🔍</button>
@@ -33,18 +21,52 @@
   <section class="blog-posts">
     <div class="post">
       <div class="image-placeholder"></div>
-      <span class="category travel">Travel</span>
-      <h3>What Traveling Greece For 2 Weeks Taught Me About Life</h3>
-      <p class="date">Jun 21, 2021 • 11 min read</p>
-      <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam mollis lectus vitae nulla malesuada...</p>
+      <span class="category travel">Health</span>
+      <h3>5 Common Signs Your Body Is Lacking Essential Vitamins</h3>
+      <p class="date">Nov 3, 2025 • 8 min read</p>
+      <p class="desc">Learn how fatigue, brittle nails, and poor sleep might be signaling nutrient deficiencies — and what to do about them.</p>
     </div>
 
     <div class="post">
       <div class="image-placeholder"></div>
-      <span class="category food">Food Theory</span>
-      <h3>Why You Should Never Order 12 Chicken Nuggets and Fries</h3>
-      <p class="date">Aug 1, 2021 • 7 min read</p>
-      <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam mollis lectus vitae nulla malesuada...</p>
+      <span class="category food">Nutrition</span>
+      <h3>Healthy Eating on a Budget: 7 Affordable Superfoods Under ₹100</h3>
+      <p class="date">Aug 1, 2025 • 7 min read</p>
+      <p class="desc">Nutritious and budget-friendly Indian foods that boost energy and overall health.</p>
+    </div>
+
+    
+    <div class="post">
+      <div class="image-placeholder"></div>
+      <span class="category food">Fitness</span>
+      <h3>10-Minute Morning Stretch Routine to Stay Active All Day</h3>
+      <p class="date">Aug 2, 2025 • 7 min read</p>
+      <p class="desc">Simple stretches you can do after waking up to improve posture and flexibility.</p>
+    </div>
+    
+    <div class="post">
+      <div class="image-placeholder"></div>
+      <span class="category food">Health</span>
+      <h3>How to Boost Immunity Naturally Without Supplements</h3>
+      <p class="date">Aug 6, 2025 • 12 min read</p>
+      <p class="desc">Explore proven ways like better sleep, hydration, and gut health to strengthen your immune system naturally.</p>
+    </div>
+    
+
+    <div class="post">
+      <div class="image-placeholder"></div>
+      <span class="category food">Wellness</span>
+      <h3>Digital Detox: How to Reconnect With Your Mind and Body</h3>
+      <p class="date">Aug 3, 2025 • 7 min read</p>
+      <p class="desc">Easy ways to reduce screen time, sleep better, and stay mentally fit.</p>
+    </div>
+    
+    <div class="post">
+      <div class="image-placeholder"></div>
+      <span class="category food">Nutrition</span>
+      <h3>The Truth About Protein: How Much Do You Really Need Daily?</h3>
+      <p class="date">Aug 7, 2025 • 9 min read</p>
+      <p class="desc">Understanding protein intake for muscle gain, recovery, and balanced diet.</p>
     </div>
   </section>
 </body>
