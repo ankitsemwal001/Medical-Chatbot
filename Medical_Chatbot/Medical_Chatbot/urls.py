@@ -22,5 +22,15 @@ from mediBot import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('adminLogin', views.adminLogin, name='adminLogin'),
+    path('home.html', views.home, name='home_html'),
+    path('profile.html', views.profile, name='profile'),
+    path('adminLogin.html', views.adminLogin, name='adminLogin'),
+    path('bot.html', views.bot, name='bot'),
+    path('changePassword.html', views.changePassword, name='changePassword'),
+    path('footer.html', views.footer, name='footer'),
+    path('header.html', views.header, name='header'),
+    path('Loginpage.html', views.Loginpage, name='Loginpage'),
+    path('logout.html', views.logout, name='logout'),
+    path('nearByhospital.html', views.nearByhospital, name='nearByhospital'),
+    path('UserLogin.html', views.UserLogin, name='UserLogin'),
 ]
