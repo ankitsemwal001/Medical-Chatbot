@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=".../static/Css/Loginpage.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/Loginpage.css' %}">
+    <script src="{% static 'js/Loginpage.js' %}"></script>
     <title>Login Page</title>
 </head>
 <body>
-    <div class="box"> 
-        <h1>Admin</h1>
-        <h2>User</h2>
-    </div>
+    <h1>Select Login Type</h1>
+    <label for="basic-select" class="sr-only">Select something</label>
+    <select id="basic-select">
+      <option value="user">User</option>
+      <option value="admin">Admin</option>
+    </select>
+    <button id="proceed-btn">Proceed</button>
+
 </body>
 </html>

@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'Medical_Chatbot.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'mediBot', 'Templates', 'Html')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,8 +121,10 @@ STATIC_URL = 'static/'
 
 import os
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'mediBot/static'),
+    os.path.join(BASE_DIR, 'mediBot', 'static'),
 ]
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

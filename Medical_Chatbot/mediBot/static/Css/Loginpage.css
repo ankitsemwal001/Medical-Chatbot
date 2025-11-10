@@ -1,17 +1,144 @@
-.box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;        /* Full page height */
-    background-color: #d19292;
+select {
+  appearance: none;
+  @supports (appearance: base-select) {
+    @media (hover: hover) {
+      &,
+      &::picker(select) {
+        appearance: base-select;
+      }
+    }
+  }
 }
 
-h1, h2 {
-    border: 1px solid black;   /* Added border width + color */
-    border-radius: 8px;
-    padding: 10px 20px;
-    margin: 10px;
-    background-color: rgb(158, 152, 152);
-    text-align: center;
+select {
+  display: flex;
+  justify-content: space-between;
+  min-width: 300px;
+  align-items: center;
+  color: white;
+  padding-block: 10px;
+  padding-inline: 30px 40px;
+  border-radius: 30px;
+  border: 2px solid indigo;
+  cursor: pointer;
+  font-weight: 700;
+  background: navy
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23FFF' class='size-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m19.5 8.25-7.5 7.5-7.5-7.5' /%3E%3C/svg%3E%0A")
+    right 10px center / 20px no-repeat;
+  @media (hover: hover) {
+    @supports (appearance: base-select) {
+      padding-inline: 20px;
+      background-image: none;
+      &::picker-icon {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23FFF' class='size-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m19.5 8.25-7.5 7.5-7.5-7.5' /%3E%3C/svg%3E%0A");
+        transition: rotate 0.2s ease-out;
+      }
+      &:open::picker-icon {
+        rotate: 180deg;
+      }
+      &::picker(select) {
+        padding: 0;
+        margin-top: 5px;
+        border: 2px solid indigo;
+        background: white;
+        border-radius: 20px;
+        font-weight: 400;
+
+        opacity: 0;
+        height: 0;
+        overflow: clip;
+        transition: height 0.5s ease-out, opacity 0.5s ease-out, overlay 0.5s,
+          display 0.5s;
+
+        transition-behavior: allow-discrete;
+      }
+      &:open::picker(select) {
+        opacity: 1;
+        height: calc-size(auto, size);
+        overflow: auto;
+        @starting-style {
+          opacity: 0;
+          height: 0;
+        }
+      }
+      option {
+        padding: 15px 20px;
+        border-top: 1px solid indigo;
+        cursor: pointer;
+        transition-property: color, background;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-out;
+        &:where(:hover, :focus, :active) {
+          background: dodgerblue;
+          color: white;
+        }
+        &:checked {
+          background: navy;
+          color: white;
+        }
+        &::checkmark {
+          display: none;
+        }
+        &:first-child {
+          border: 0;
+        }
+      }
+    }
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: radial-gradient(
+    circle,
+    oklch(50% 0.2 200),
+    oklch(30% 0.2 200)
+  );
+}
+
+h1 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: white;
+  color: navy;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: dodgerblue;
+  color: white;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }

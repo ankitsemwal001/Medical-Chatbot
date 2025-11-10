@@ -25,6 +25,7 @@ urlpatterns = [
     path('home.html', views.home, name='home_html'),
     path('profile.html', views.profile, name='profile'),
     path('adminLogin.html', views.adminLogin, name='adminLogin'),
+    path('adminhome.html', views.adminhome, name='adminhome'),
     path('bot.html', views.bot, name='bot'),
     path('changePassword.html', views.changePassword, name='changePassword'),
     path('footer.html', views.footer, name='footer'),
@@ -33,4 +34,6 @@ urlpatterns = [
     path('logout.html', views.logout, name='logout'),
     path('nearByhospital.html', views.nearByhospital, name='nearByhospital'),
     path('UserLogin.html', views.UserLogin, name='UserLogin'),
+    path('viewuser.html', views.viewuser, name='viewuser'),
+    path('manageoption.html', views.manageoption, name='manageoption'),
 ]
