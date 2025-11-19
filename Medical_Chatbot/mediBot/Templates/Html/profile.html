@@ -3,10 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  <link rel="stylesheet" href="{% static 'css/profile.css' %}">
     <title>Document</title>
 </head>
 <body>
     {% include 'Html/adminheader.html' %}
     
+    <div class="container">
+    <h2>Profile Detail</h2>
+    <p>Enter your information for better experience.</p>
+
+    <form>
+        <div class="grid">
+            <input type="text" placeholder="Full Name*" required>
+            <select required>
+                <option disabled selected>Select Gender*</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+            </select>
+
+            <input type="number" placeholder="Age*" required>
+            <input type="tel" placeholder="Phone Number*" required>
+
+            <input type="email" placeholder="Email">
+            <input type="text" placeholder="Emergency Contact*" required>
+
+            <input type="text" class="full" placeholder="Address*" required>
+
+            <select required>
+                <option disabled selected>Select Department*</option>
+                <option>Cardiology</option>
+                <option>Neurology</option>
+                <option>Orthopedics</option>
+                <option>General Medicine</option>
+            </select>
+
+            <input type="text" placeholder="Primary Diagnosis*" required>
+
+            <textarea class="full" placeholder="Allergies"></textarea>
+            <textarea class="full" placeholder="Medical History"></textarea>
+        </div>
+        
+        <div class="footer">
+            <button type="button" class="btn cancel">Cancel</button>
+            <button type="submit" class="btn add">Add Patient</button>
+        </div>
+    </form>
+</div>
+
 </body>
 </html>

@@ -56,7 +56,7 @@ ROOT_URLCONF = 'Medical_Chatbot.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'mediBot', 'Templates', 'Html')],
+        'DIRS': [os.path.join(BASE_DIR, 'mediBot', 'Templates', 'html')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
