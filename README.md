@@ -34,5 +34,5 @@ Medical-Chatbot/
 └── .gitignore
 
 How to run?
-
+.
 
